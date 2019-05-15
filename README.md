@@ -26,6 +26,31 @@ def pname():
 ```
 Takeaway:
 
-so this decorator returns afunc intact, and whatever is returned is bound to name of original function.
-No __name__ info gets lost, no docstrings lost.
+1. so this decorator returns afunc intact, and whatever is returned is bound to name of original function.
+2. No `__name__` info gets lost, no docstrings lost.
 
+`decorator second example`
+
+```
+>>> def dec(afunc):
+...		print 'vijay'
+...		return afunc
+
+>>> @dec
+...	def afunc():
+...		print 'shanker'
+...
+'vijay'
+
+>>> afunc()
+'shanker'
+
+>>> afunc()
+'shanker'
+```
+
+Takeaway:
+1. binding happens one time, i.e at end of def statement, so 'vijay' gets printed the moment def statement ends, 
+and any further call to function afunc() only prints 'shanker'
+
+2. `__name__` info still remains intact and if provided will be preserved.
