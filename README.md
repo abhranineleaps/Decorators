@@ -47,10 +47,41 @@ Takeaway:
 
 >>> afunc()
 'shanker'
+
+>>> pname.__name__
+'pname'
 ```
 
 Takeaway:
 1. binding happens one time, i.e at end of def statement, so 'vijay' gets printed the moment def statement ends, 
 and any further call to function afunc() only prints 'shanker'
 
-2. `__name__` info still remains intact and if provided will be preserved.
+2. Once the decoration or binding happens, calling the original function will call whatever is the output of decoration.
+```
+@decorator
+def myfunc(1,2):
+...	print 'in func'
+
+# above is essentially same as
+>>> myfunc = decorator(myfunc)(1,2)	
+```
+
+3. `__name__` info still remains intact and if provided will be preserved.
+
+`decorators as wrappers`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
