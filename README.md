@@ -8,6 +8,7 @@ runs one function through another function at end of a def statement and rebinds
 
 `decorator first example`
 
+```
 def dec(afunc):
 	return afunc
 
@@ -22,7 +23,7 @@ def pname():
 
 >>> pname.__name__
 'pname'
-
+```
 Takeaway:
 
 so this decorator returns afunc intact, and whatever is returned is bound to name of original function.
