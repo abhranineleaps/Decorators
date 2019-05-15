@@ -62,8 +62,7 @@ and any further call to function afunc() only prints 'shanker'
 def myfunc(1,2):
 ...	print 'in func'
 
-# above is essentially same as
->>> myfunc = decorator(myfunc)(1,2)	
+# the above and decorator(myfunc)(1,2) are essentially same.	
 ```
 
 3. `__name__` info still remains intact and if provided will be preserved.
