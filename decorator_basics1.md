@@ -105,14 +105,22 @@ def decorator(afunc):
 third example can be coded as a class decorator, like below, explanation to follow:
 
 ```
-class decorator:
+class Decorator:
 	def __init__(self, afunc):
 		self.afunc = afunc
 
 	def __call__(self, *args):
-		self.func(*args)
+		return self.func(*args)
 
 ```
+Takeaway:
+1. classes are capable of getting used as decorators. When we use class as a decorated, the original function becomes an instance
+of class decorator. The decorator class is provided a `__call__` method, so that instance of class decorator can be called with/without
+arguments.
+
+2. Disadvantage of using classes as a decorator is that it can not be used to decorate methods. Since the decorated method will become
+an instance of class decorator, the `self` in `__call__` method is still instance of class Decorator and not that of decorated class.
+So `self` of method will take value of whatever we provide while calling the method and not its usual value of `instance` of class it is bound to. 
 
 
 
