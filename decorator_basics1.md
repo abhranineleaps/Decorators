@@ -33,13 +33,12 @@ Takeaway:
 
 ```
 >>> def dec(afunc):
-...		print 'vijay'
-...		return afunc
+		print 'vijay'
+		return afunc
 
 >>> @dec
-...	def afunc():
-...		print 'shanker'
-...
+	def afunc():
+		print 'shanker'
 'vijay'
 
 >>> afunc()
@@ -60,7 +59,7 @@ and any further call to function afunc() only prints 'shanker'
 ```
 @decorator
 def myfunc(1,2):
-...	print 'in func'
+	print 'in func'
 
 # the above and decorator(myfunc)(1,2) are essentially same.	
 ```
@@ -103,7 +102,17 @@ def decorator(afunc):
 	return wrapper
 ```
 
+third example can be coded as a class decorator, like below, explanation to follow:
 
+```
+class decorator:
+	def __init__(self, afunc):
+		self.afunc = afunc
+
+	def __call__(self, *args):
+		self.func(*args)
+
+```
 
 
 
