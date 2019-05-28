@@ -51,6 +51,6 @@ Traceback (most recent call last):
 AttributeError: 'Person' object has no attribute 'age'
 ```
 
-Like in examples where we were decorating classes, name rebinding happened here, therefore `Person.__name__` will give `wrapper`.
+Like in examples where we were decorating functions, name rebinding happened here, therefore `Person.__name__` will give `wrapper` as its name.
 To preserve `__name__` attribute, we can set `wrapper.__name__` to `cls.__name__`
 
